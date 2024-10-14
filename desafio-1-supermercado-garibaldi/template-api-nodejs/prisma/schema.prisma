@@ -1,0 +1,60 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Categoria {
+    id String @id @unique @default(uuid())
+
+    nome String
+
+    produtos Produto[]
+
+    @@map("categoria")
+}
+
+model Produto {
+    id String @id @unique @default(uuid())
+
+    nome         String
+    preco        Float
+    estoqueAtual Int
+    dataValidade DateTime
+    dataCadastro DateTime @default(now())
+
+    categoria   Categoria @relation(fields: [categoriaId], references: [id], onDelete: Cascade)
+    categoriaId String
+
+    vendas VendaProduto[]
+
+    @@map("produto")
+}
+
+model Venda {
+    id String @id @unique @default(uuid())
+
+    dataVenda DateTime @default(now())
+
+    produtos VendaProduto[]
+
+    @@map("venda")
+}
+
+model VendaProduto {
+    id String @id @unique @default(uuid())
+
+    quantidadeProduto Int
+    precoVenda        Float
+
+    produto   Produto? @relation(fields: [produtoId], references: [id], onDelete: Cascade)
+    produtoId String?
+
+    venda   Venda?  @relation(fields: [vendaId], references: [id], onDelete: Cascade)
+    vendaId String?
+
+    @@map("vendaProduto")
+}

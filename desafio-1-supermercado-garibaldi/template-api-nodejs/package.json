@@ -1,0 +1,22 @@
+{
+    "name": "template-api-nodejs",
+    "version": "1.0.0",
+    "description": "Template API Nodejs Desafio 1",
+    "main": "index.js",
+    "type": "module",
+    "engines": {
+        "node": "20"
+    },
+    "scripts": {
+        "prisma": "./node_modules/.bin/prisma",
+        "prisma:studio": "npm run prisma -- studio",
+        "start": "node --watch src/server.js"
+    },
+    "dependencies": {
+        "@prisma/client": "^5.20.0",
+        "fastify": "^5.0.0"
+    },
+    "devDependencies": {
+        "prisma": "^5.20.0"
+    }
+}
