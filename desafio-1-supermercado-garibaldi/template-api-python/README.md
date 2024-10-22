@@ -10,12 +10,13 @@ pip install --user pipenv
 
 ## Configurar Banco de Dados
 - Baixe o arquivo _**database.db**_ localizado dentro da pasta do desafio.
-- Coloque esse arquivo dentro da pasta _**src**_, ficando dessa forma:
+- Coloque esse arquivo dentro da raiz do projeto, ficando dessa forma:
 
 ```shell
 src/
 |-- server.py
-|-- database.db # coloque o arquivo aqui
+database.db # coloque o arquivo aqui
+...
 ```
 
 ## Rodar Projeto
