@@ -19,7 +19,7 @@ src/
 
 ## Rodar projeto
 
-Com o Nodejs instalado, rode o seguinte comando dentro da raiz do projeto
+Com o Nodejs instalado, rode o seguinte comando dentro da raiz do projeto para instalar as dependências.
 
 ```bash
 npm install
